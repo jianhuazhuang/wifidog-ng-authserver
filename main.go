@@ -134,7 +134,7 @@ func main() {
             mac := r.URL.Query().Get("mac")
             token := generateToken(mac)
 
-            uri := fmt.Sprintf("http://%s:%s/wifidog/auth?token=%s", gw_address, gw_port, token)
+            uri := fmt.Sprintf("http://%s:%s/auth?token=%s", gw_address, gw_port, token)
             http.Redirect(w, r, uri, http.StatusFound)
         }
     })
@@ -173,7 +173,7 @@ func main() {
         mac := r.URL.Query().Get("mac")
         token := generateToken(mac)
 
-        uri := fmt.Sprintf("http://%s:%s/wifidog/auth?token=%s", gw_address, gw_port, token)
+        uri := fmt.Sprintf("http://%s:%s/auth?token=%s", gw_address, gw_port, token)
         http.Redirect(w, r, uri, http.StatusFound)
     })
 
